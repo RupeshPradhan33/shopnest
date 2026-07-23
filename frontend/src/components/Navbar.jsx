@@ -24,8 +24,8 @@ const Navbar = () => {
                     ShopNest
                 </Link>
             </div>
-            <div className="navbar-links">
-                <ul>
+            <div >
+                <ul className="navbar-links">
                     <li><Link to="/shop">Shop</Link></li>
                     <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
                     {user ? (
