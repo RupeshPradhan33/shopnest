@@ -41,6 +41,10 @@ const ProductDetail = () => {
   if (loading) return <div style={{ textAlign: 'center', margin: '100px', color: '#f97316' }}>Loading Product...</div>;
   if (!product) return <div style={{ textAlign: 'center', margin: '100px', color: '#ef4444' }}>Product Not Found</div>;
 
+  // Normalize numeric fields to avoid runtime errors when backend returns strings/null
+  const price = Number(product.price ?? 0);
+  const stock = Number(product.stock ?? 0);
+
   return (
     <div className="product-detail-wrapper" style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
       
@@ -60,7 +64,7 @@ const ProductDetail = () => {
           
           <h2 style={{ fontSize: '2.8rem', marginBottom: '10px' }}>{product.name}</h2>
 
-          <p className="detail-price" style={{ fontSize: '2.5rem', margin: '15px 0' }}>₹{product.price.toFixed(2)}</p>
+          <p className="detail-price" style={{ fontSize: '2.5rem', margin: '15px 0' }}>₹{price.toFixed(2)}</p>
 
           {/* Description */}
           <div style={{ marginBottom: '25px' }}>
@@ -75,8 +79,8 @@ const ProductDetail = () => {
             </button>
           </div>
           
-          <p style={{ marginTop: '20px', color: product.stock > 0 ? '#10b981' : '#ef4444', fontWeight: '600' }}>
-            {product.stock > 0 ? `● In Stock (${product.stock} units available)` : `● Temporarily Out of Stock`}
+          <p style={{ marginTop: '20px', color: stock > 0 ? '#10b981' : '#ef4444', fontWeight: '600' }}>
+            {stock > 0 ? `● In Stock (${stock} units available)` : `● Temporarily Out of Stock`}
           </p>
 
         </div>

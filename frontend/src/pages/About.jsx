@@ -27,12 +27,12 @@ const About = () => {
   return (
     <div style={containerStyle}>
       <img
-        src="/dp.jpg"
+        src="/dp.jpeg"
         alt="@therupesh"
         style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', border: '4px solid #f97316', marginBottom: '20px', boxShadow: '0 4px 20px rgba(249, 115, 22, 0.4)' }}
       />
       <h2 style={{ fontSize: '2.5rem', marginBottom: '10px', color: '#fff' }}>About Me</h2>
-      <h3 style={{ fontSize: '1.5rem', color: '#f97316', marginBottom: '15px' }}>Rupesh Pradhan (rupesh-pradhan)</h3>
+      <h3 style={{ fontSize: '1.5rem', color: '#f97316', marginBottom: '15px' }}>Rupesh Pradhan (@rupesh-pradhan)</h3>
 
       <p style={{ color: '#a1a1aa', fontSize: '1.2rem', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto 30px auto' }}>
         <strong>Hi I am Rupesh..!</strong> I am Btech Computer Science Student at VSSUT.
